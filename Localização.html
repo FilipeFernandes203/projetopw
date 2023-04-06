@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Localização</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+             padding-top: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header-loc>
+        <nav>
+        <ul>
+            <li><a href="index.html">Sobre</a></li>
+            <li><a href="monumentos.html">Monumentos e Locais Históricos</a></li>
+            <li><a href="gastronomia.html">Gastronomia</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="turismo.html">Rotas Turisticas</a></li>
+            <li><a href="Localização.html">Localização</a></li>
+        </ul>
+        </nav>
+    </header-loc>
+
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZmlsaXBlZmVybmFuZGVzMjIiLCJhIjoiY2xmcXB6N2o5MDB3aDQzbnhheHgyYXplcyJ9.fZu4LSOydqY1XYA0wPdfkg';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
+            center: [-7.115152, 40.038810 ], // starting position [lng, lat]
+            zoom: 16 // starting zoom
+            
+        });
+    </script>
+
+
+<script>
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-7.115152, 40.038810])
+        .addTo(map);
+</script>
+
+
+    <script>
+        var marker = new mapboxgl.Marker({
+            color: "#ff0000",
+            draggable: true,
+        })
+            .setLngLat([-7.115152, 40.038810])
+            .addTo(map);
+    </script>
+    
+
+</body>
+
+</html>
